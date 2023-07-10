@@ -1,0 +1,116 @@
+body {
+  background-color: rgb(135,206,235);
+}
+.navigation {
+    display: flex;
+    /* flex-flow: row wrap; */
+    /* justify-content: flex-end; */
+    
+    list-style: none;
+    margin: 0; 
+    background: deepskyblue;
+  }
+  
+  .navigation a {
+    text-decoration: none;
+    display: block;
+    padding: 1em;
+    color: white;
+  }
+  
+  .navigation a:hover {
+    background: #1565C0;
+  }
+  
+  @media all and (max-width: 100px) {
+    .navigation {
+      justify-content: space-around;
+    }
+  }
+  
+  @media all and (max-width: 100px) {
+    .navigation {
+      flex-flow: column wrap;
+      padding: 0;
+    }
+    .navigation a { 
+      text-align: center; 
+      padding: 10px;
+      border-top: 1px solid rgba(255, 255, 255,0.3); 
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1); 
+    }
+    .navigation li:last-of-type a {
+      border-bottom: none;
+    }
+  }
+
+#lol{
+    padding-left: 20px;
+}
+#lol2{
+    padding-left: 20px;
+}
+.ArtistPage{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding: 50px;
+    
+}
+
+#box{
+     border-radius: 15px;
+    background: #73AD21;
+     padding: 10px; 
+    width: 200px;
+    height: 230px;  
+   
+
+    display: inline-block;
+    
+    
+}
+
+
+
+
+#box1song{
+    border-radius: 15px;
+    background: #73AD21;
+    padding: 3px; 
+    width: 200px;
+    height: 230px;
+}
+#kdaplayer{
+    padding:85px;
+    width:100%;
+   
+}
+
+.container {
+	display: flex;
+	/* flex-direction: column; */
+	justify-content: space-around;
+}
+.item  {
+    background: tomato;
+    padding: 5px;
+    width: 200px;
+    height: 150px;
+    margin-top: 10px;
+    line-height: 150px;
+    color: white;
+    font-weight: bold;
+    font-size: 2em;
+    text-align: center;
+    border-radius: 15px;
+  }
+
+  #footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 60px;   /* Height of the footer */
+    background: #6cf;
+ }
+   

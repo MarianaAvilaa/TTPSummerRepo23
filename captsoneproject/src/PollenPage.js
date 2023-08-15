@@ -1,5 +1,7 @@
+
+
 import React from 'react';
-import { useState, useEffect } from 'react';
+import {  useEffect } from 'react';
 import axios from 'axios';
 import './App.css';
 import { usePollenContext } from './PollenProvider';
@@ -13,9 +15,8 @@ export default function PollenInformation(){
     const {weedPollen, setWeedPollen} = usePollenContext();
 
     useEffect(() =>{
-        async function fetchPollen(){
+        async function getPollen(){
 
-            latitude();
             const{data}=  await axios.get("https://api.breezometer.com/pollen/v2/forecast/daily?lat="+lat+"&lon="+long+"&days=3&key=91a44f306dcc4cdca6c16800c540e44c")
             .then((response) => {
                 setTreePollen(data[0].types.tree.index.value);
@@ -27,17 +28,20 @@ export default function PollenInformation(){
          
             });
         }
-        fetchPollen();
-    },[]);
+        getPollen();
+    },[lat,setLat,long,setLong,zcode,setLong,zcode,setZcode,treePollen,setTreePollen,grassPollen,setGrassPollen,weedPollen,setWeedPollen]);
 
     useEffect(() => {
         const latitude = async() =>{
             const {data}= axios.get("https://thezipcodes.com/api/v1/search?zipCode="+zcode+"&countryCode=US&apiKey=3bbcefb8b4912d2f67f5bc8cf37d9dbb")
+            console.log(data);
+            console.log(zcode);
                 setLat(data.location[0].latitude);
                 setLong(data.location[0].longitude);
            };
+           latitude();
         
-    },[]);
+    },[setLat,setLong,zcode]);
 
     const handleChange = (event) => {
         setZcode(event.target.value);
@@ -45,7 +49,7 @@ export default function PollenInformation(){
     
       const handleClick = () => {
         if (zcode !== ' '){
-          getPollen();
+          PollenInformation();
           console.log("clicked");
           console.log(lat);
           console.log(long);

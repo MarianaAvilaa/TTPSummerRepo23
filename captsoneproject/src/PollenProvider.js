@@ -1,7 +1,7 @@
 import React,{useState, useContext, createContext} from "react";
 
 const PollenContext= createContext();
-export function PollenProvider({children}){
+export default function PollenProvider({children}){
     
     const [lat, setLat] = useState('');
     const [long, setLong] = useState('');

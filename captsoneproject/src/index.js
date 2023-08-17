@@ -1,19 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+
 import { BrowserRouter } from 'react-router-dom';
 import PollenProvider from './PollenProvider';
 import Root from './Root';
+import WeatherProvider from './WeatherProvider';
+
 //import Root from './Root';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     
     <PollenProvider>
+    <WeatherProvider>
     <BrowserRouter>
     <Root />
     </BrowserRouter>
+    </WeatherProvider>
     </PollenProvider >
    
     

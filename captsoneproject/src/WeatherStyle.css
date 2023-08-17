@@ -1,0 +1,51 @@
+.Weather{
+
+    background-image: url('minecraftbg2.png');
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+    
+}
+.InputBox {
+    
+    margin-top: 10px;
+    width: 30%;
+    display: inline-block; 
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    color: white;
+  }
+.weatherInfo{
+   
+        list-style-type: none;
+        padding: 0;
+    
+}
+
+.Weather .search-box {
+    width: 10%;
+    align-items: center;
+    text-align: center;
+   justify-content: center;
+
+  }
+  .search-box .zcode {
+    border-radius:5px;
+    border: 1px solid #eee;
+    transition: .3s border-color;
+    text-align: center;
+    text-align: right;
+    text-decoration: none;
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+   
+   
+  }  
+ 
+  .search-box .zcode:focus {
+    background-color: rgba(44, 130, 201,1);
+  }
+
